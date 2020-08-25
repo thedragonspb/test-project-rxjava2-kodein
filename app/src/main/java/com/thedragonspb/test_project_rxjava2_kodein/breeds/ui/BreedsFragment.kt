@@ -29,7 +29,7 @@ class BreedsFragment : Fragment(), KodeinAware {
 
     private val viewModel: BreedsViewModel by viewModel()
 
-    private lateinit var adapter: BreedsAdapter
+    private lateinit var breedsAdapter: BreedsAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,7 +53,7 @@ class BreedsFragment : Fragment(), KodeinAware {
             .autoDispose(AndroidLifecycleScopeProvider.from(viewLifecycleOwner))
             .subscribe(
                 { breeds ->
-                    adapter.submitList(breeds)
+                    breedsAdapter.submitList(breeds)
                 },
                 Timber::e
             )
@@ -64,7 +64,7 @@ class BreedsFragment : Fragment(), KodeinAware {
     }
 
     private fun setupRecyclerView() {
-        adapter = BreedsAdapter { breed ->
+        breedsAdapter = BreedsAdapter { breed ->
             findNavController().navigate(
                 R.id.to_breed_images,
                 bundleOf("breed" to breed)
@@ -73,7 +73,7 @@ class BreedsFragment : Fragment(), KodeinAware {
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = adapter
+            adapter = breedsAdapter
         }
     }
 }

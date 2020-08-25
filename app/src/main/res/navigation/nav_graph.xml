@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.thedragonspb.test_project_rxjava2_kodein.app.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/to_breed_images"
+            app:destination="@id/breedImagesFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/breedImagesFragment"
+        android:name="com.thedragonspb.test_project_rxjava2_kodein.breed_images.ui.BreedImagesFragment"
+        android:label="fragment_breed_images"
+        tools:layout="@layout/fragment_breed_images" >
+
+        <argument
+            android:name="breed"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

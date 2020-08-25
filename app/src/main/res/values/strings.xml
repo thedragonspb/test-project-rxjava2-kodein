@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">test-project-rxjava2-dagger2</string>
+
+    <string name="breeds">Breeds</string>
+
+    <string name="list">List</string>
+    <string name="favourites">Favourites</string>
+
+    <string name="server_error_title">Some server error</string>
+    <string name="server_error_message">Try connect latter</string>
+
+    <string name="share_photo">Share photo</string>
+
+    <string name="photo_count">(%1$d photo)</string>
+    <string name="photos_count">(%1$d photos)</string>
+
+    <string name="subreeds_count">(%1$d subbreeds)</string>
+
+</resources>
